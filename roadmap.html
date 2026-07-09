@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Diagnóstico J Queiroz | Dark Slide Mode</title>
+    <title>Roadmap Execução - J Queiroz | Dark Slide Mode</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -85,6 +85,17 @@
             z-index: 1;
         }
         
+        .cover-logo {
+            max-width: 300px;
+            margin-bottom: 40px;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .cover h1 {
             font-size: 54pt;
             color: #fff;
@@ -93,7 +104,7 @@
             border: none;
             padding: 0;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            animation: slideUp 0.8s ease-out;
+            animation: slideUp 0.8s ease-out 0.1s both;
         }
         
         .cover h2 {
@@ -109,11 +120,6 @@
             color: #cbd5e0;
             margin: 8px 0;
             animation: slideUp 0.8s ease-out 0.3s both;
-        }
-        
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         /* ===== CONTENT SLIDES ===== */
@@ -176,7 +182,7 @@
             font-weight: 700;
         }
         
-        ol, ul { 
+        ol { 
             margin: 20px 0 20px 40px; 
         }
         
@@ -187,23 +193,23 @@
         }
         
         /* ===== CARDS / BOXES ===== */
-        .issue-section {
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+        .frente-section {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(17, 118, 182, 0.1) 100%);
             padding: 25px;
             margin: 20px 0;
             border-radius: 12px;
-            border-left: 5px solid #DC2626;
+            border-left: 5px solid #60a5fa;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
         
-        .issue-section:hover {
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
-            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.2);
+        .frente-section:hover {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(17, 118, 182, 0.15) 100%);
+            box-shadow: 0 12px 40px rgba(96, 165, 250, 0.2);
             transform: translateX(5px);
         }
         
-        .issue-title { 
+        .frente-title { 
             font-size: 14pt; 
             font-weight: 700; 
             color: #fff;
@@ -212,7 +218,7 @@
             margin-bottom: 12px;
         }
         
-        .issue-number { 
+        .frente-number { 
             width: 38px; 
             height: 38px; 
             background: linear-gradient(135deg, #DD2E32, #ff6b6b);
@@ -226,12 +232,69 @@
             box-shadow: 0 4px 15px rgba(221, 46, 50, 0.4);
         }
         
-        .issue-section p {
+        .frente-section p {
             margin: 8px 0;
             color: #cbd5e0;
             font-size: 11pt;
         }
         
+        /* ===== WEEK ITEMS ===== */
+        .week-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #60a5fa;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .week-item:hover {
+            background: rgba(96, 165, 250, 0.1);
+            box-shadow: 0 8px 32px rgba(96, 165, 250, 0.15);
+            transform: translateX(5px);
+        }
+        
+        .week-title { 
+            font-size: 12pt; 
+            font-weight: 700; 
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        
+        .week-dates { 
+            font-size: 10pt; 
+            color: #a0aec0;
+            margin-bottom: 8px;
+        }
+        
+        .week-deliverable { 
+            font-size: 11pt; 
+            color: #cbd5e0;
+            line-height: 1.6;
+            margin: 8px 0 0 0;
+        }
+        
+        .week-type { 
+            display: inline-block; 
+            padding: 5px 12px; 
+            border-radius: 20px;
+            font-size: 9pt; 
+            font-weight: 700; 
+            margin-top: 10px;
+        }
+        
+        .presencial { 
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: #1f2937;
+        }
+        
+        .online { 
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+        }
+        
+        /* ===== INFO BOX ===== */
         .info-box {
             background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
             border-left: 5px solid #60a5fa;
@@ -247,51 +310,7 @@
             font-weight: 500;
         }
         
-        .action-box {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
-            border-left: 5px solid #22C55E;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
-            transition: all 0.3s ease;
-        }
-        
-        .action-box:hover {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(34, 197, 94, 0.1) 100%);
-            box-shadow: 0 12px 40px rgba(34, 197, 94, 0.2);
-            transform: translateX(5px);
-        }
-        
-        .action-title { 
-            font-size: 14pt; 
-            font-weight: 700; 
-            color: #fff;
-            display: flex; 
-            align-items: center; 
-            margin-bottom: 12px;
-        }
-        
-        .action-number { 
-            width: 38px; 
-            height: 38px; 
-            background: linear-gradient(135deg, #22C55E, #4ADE80);
-            color: white; 
-            border-radius: 50%; 
-            text-align: center; 
-            line-height: 38px; 
-            margin-right: 15px; 
-            font-weight: 700; 
-            font-size: 12pt;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
-        }
-        
-        .action-section p {
-            margin: 8px 0;
-            color: #cbd5e0;
-            font-size: 11pt;
-        }
-        
+        /* ===== TABLE ===== */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -325,7 +344,7 @@
         /* ===== NAVIGATION ===== */
         .controls {
             position: fixed;
-            bottom: 5px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -333,7 +352,7 @@
             z-index: 100;
             align-items: center;
             background: rgba(17, 24, 39, 0.85);
-            padding: 10px 25px;
+            padding: 15px 25px;
             border-radius: 30px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(96, 165, 250, 0.2);
@@ -344,7 +363,7 @@
             background: linear-gradient(135deg, #1176B6, #0d5fb2);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 25px;
             cursor: pointer;
             font-weight: 700;
@@ -452,7 +471,9 @@
             .cover h1 { font-size: 32pt; }
             .cover h2 { font-size: 18pt; }
             .cover { padding-top: 60px; }
+            .week-item { padding: 15px; }
             
+            /* Controles em toolbar fixa no TOPO em mobile */
             .controls { 
                 position: fixed;
                 top: 0;
@@ -525,8 +546,15 @@
             h2 { font-size: 14pt; }
             h3 { font-size: 12pt; }
             
-            .issue-section { padding: 15px; margin: 15px 0; }
-            .issue-title { font-size: 12pt; }
+            .frente-section { padding: 15px; margin: 15px 0; }
+            .frente-title { font-size: 12pt; }
+            .week-item { padding: 12px; margin: 12px 0; }
+            .week-title { font-size: 11pt; }
+            .week-type { font-size: 8pt; padding: 4px 10px; }
+            
+            table { font-size: 9pt; }
+            th { padding: 10px 8px; }
+            td { padding: 8px; }
         }
     </style>
 </head>
@@ -535,378 +563,438 @@
         <!-- SLIDE 1: COVER -->
         <div class="slide cover active">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABV0AAAHDCAYAAAA3PboGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTIwOUFFMzQ1MkYxMUUzQTAwRUQwRDk0NEMzQjM0MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTIwOUFFNDQ1MkYxMUUzQTAwRUQwRDk0NEMzQjM0MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxMjA5QUUxNDUyRjExRTNBMDBFRDBEOTQ0QzNCMzQxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxMjA5QUUyNDUyRjExRTNBMDBFRDBEOTQ0QzNCMzQxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3CAOLQAAjhNJREFUeNrs3QeY3NTV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" alt="J Queiroz Logo" >
-            <h1>DIAGNÓSTICO EMPRESARIAL</h1>
-            <p>Levantamento de Processos e Estrutura Organizacional</p>
+            <!-- <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABV0AAAHDCAYAAAA3PboGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTIwOUFFMzQ1MkYxMUUzQTAwRUQwRDk0NEMzQjM0MSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTIwOUFFNDQ1MkYxMUUzQTAwRUQwRDk0NEMzQjM0MSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxMjA5QUUxNDUyRjExRTNBMDBFRDBEOTQ0QzNCMzQxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxMjA5QUUyNDUyRjExRTNBMDBFRDBEOTQ0QzNCMzQxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3CAOLQAAjhNJREFUeNrs3QeY3NTV8PFrijG9KvRA6C0UQUQIEHpdFkINvfc3QEIoIQkQIBBqXmroJfQOwSydQOgIECXUAMGEjky3MTbYfOdE19+7jDWzMzvS6Erz/z3PfWTPzqgc9aOre4d8++23BgAAAAAAuCf2g5lkcIuUmYlGqUyQsp8XhQ8QCqA7TUEIAAAAAABwT+wHQ2RwsZRViUapjJeyCwlXoLuRdAUAAAAAwE0HSvkZYSiVb6Ts6EXhVYQC6G5DaF4AAAAAAAC3xH6wigz+LmVKolEaX0vZxovCGwgFAJKuAAAAAAA4JPaD78kgkjI30SiNcVJ+7kXhzYQCgKJ5AQAAAAAAHBH7weQyuNKQcC2TsVK28KLwVkIBYCKSrgAAAAAAuOMIKWsRhtL4SspmXhTeTigA9EfzAgAAAAAAOCD2g/Vl0CdlMqJRCmOkbOJF4d2EAkAtkq4AAAAAABQs9oN5TdKO62xEoxRGS+n1ovA+QgEgDc0LAAAAAABQoNgPppTBNYaEa1l8IaXHi8IHCQWAichi8QEAAAAAADgo9oP1ZdAnZTKiUQpjpGziReHdhAJALZKuAAAAAADU3P/fPX/dTYSEa5mMlbKFF4V3EwoATUTzAgAAAAAAVCT2g11lcL0h4VoWX0jp8aLwAUIBoFkkXQEAAAAAKM6ZUtYiDKXxlZTNvCi8lVAA0LwAAAAAAACvCv1gaxlcY0i4lsUXUnq8KHyQUABoHSVdAQAAAAAoUOwHU8rgGkPCtSy+kHK8F4V3EwoAbaMrQAAAAAAADor9YB0Z9EmZjGiUwhgpm3hReHehAFCb7RMAAAAAAAAAAABAV6MkSwAAeHHkyJHg8ePHwdDQUHDp0qXgwYMHwd27d4P79+8Ht2/fDm7duhXcvHkzuHnzZnDz5s3g+vXrwfXr14Pr168H169fJyaASVZWVoK5ubng4sWLwZMnT4Knz54FF69cCf7xww/BPz/7rCi//OILoAAAA" alt="J Queiroz Logo" class="cover-logo"> -->
+            <h1>ROADMAP DE EXECUÇÃO</h1>
+            <h2>J Queiroz - Estruturação Financeira e Governança</h2>
+            <p>Consultoras: Silvia Curto | Carol Curto</p>
+            <p style="margin-top: 30px; font-size: 13pt;">16 Semanas | 3 Fases </p>
         </div>
 
-        <!-- SLIDE 2: ANÁLISE GERAL -->
+        <!-- SLIDE 2: VISÃO GERAL -->
         <div class="slide">
             <div class="slide-content">
-                <h1>ANÁLISE GERAL DO CENÁRIO</h1>
-                <p><strong>Equipes Envolvidas:</strong> Suprimentos, Financeiro, RH, Fiscal/Contábil, Gestores de Projeto</p>
+                <h1>VISÃO GERAL DO PROJETO</h1>
+                <p style="font-size: 13pt; margin-top: 30px;"><strong>Duração:</strong> 16 semanas (4 meses)</p>
+                <p><strong>Reuniões:</strong> Semanais + 3 Visitas Presenciais</p>
                 
                 <div class="info-box" style="margin-top: 40px;">
-                    <p>🔍 O diagnóstico identificou <strong>falhas de Processos</strong> distribuídas em 5 áreas críticas da organização, com foco em processos, controles internos e gestão de informações financeiras.</p>
+                    <p><strong>🎯 3 FRENTES PARALELAS DE TRABALHO</strong></p>
                 </div>
 
-                <h2 style="margin-top: 40px;">Principais Descobertas:</h2>
-                <ul>
-                    <li><strong>Gestão de Compras não padronizada:</strong> Alto volume de compras emergenciais diárias sem critérios claros</li>
-                    <li><strong>Ausência de Controles Financeiros:</strong> Falta visibilidade de Orçado X Realizado por projeto, Fluxo de Caixa</li>
-                    <li><strong>Processos Manuais:</strong> Apontamentos em Excel, fluxo de caixa não projetado</li>
-                    <li><strong>Acúmulo de Responsabilidades:</strong> Gestores sobrecarregados</li>
-                    <li><strong>Falta de Documentação:</strong> Ausência de procedimentos operacionais, manuais e organograma formal</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SLIDE 3: COMPRAS E SUPRIMENTOS -->
-        <div class="slide">
-            <div class="slide-content">
-                <h1>COMPRAS E SUPRIMENTOS</h1>
-                
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">1</span>Compras Emergenciais</div>
-                    <p>Ocorrem diariamente em volume considerável, sem definição clara do que é realmente "emergencial". Muitas são alegadas como críticas, mas não são urgentes de fato.</p>
+                <div class="frente-section" style="margin-top: 30px;">
+                    <div class="frente-title"><span class="frente-number">1</span> AUDITORIA DOS NÚMEROS</div>
+                    <p><strong>Entregáveis:</strong> DRE Verificado | Balanço Verificado | Fluxo de Caixa Projetado | Relatório Endividamento</p>
                 </div>
 
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">2</span>Ausência de Critérios de Priorização</div>
-                    <p>Sem estabelecimento de:</p>
-                    <ul style="margin-left: 60px; margin-top: 10px; font-size: 11pt;">
-                        <li>Procedimentos por atividade a executar</li>
-                        <li>Lista de materiais e serviços necessários</li>
-                        <li>Checklist de materiais por projeto</li>
-                        <li>Estoque mínimo nos almoxarifados</li>
-                    </ul>
+                <div class="frente-section">
+                    <div class="frente-title"><span class="frente-number">2</span> CONTROLE INTERNO</div>
+                    <p><strong>Entregáveis:</strong> POPs de Processos Financeiros | Manual Governança | Manual Rotinas | Organograma</p>
                 </div>
 
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">3</span>Falta de Análise de Erros</div>
-                    <p>Não há diagnóstico estruturado de erros de programação de compras ou relação de compras por categoria de materiais e projeto.</p>
+                <div class="frente-section">
+                    <div class="frente-title"><span class="frente-number">3</span> MAPEAMENTO DE RISCO</div>
+                    <p><strong>Entregáveis:</strong> Mapa de Riscos | Inventário de Contratos | Gestor de Risco (Dashboard) | Análise Contingências</p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 4: CONTRATOS -->
+        <!-- SLIDE 3: FASE 1 KICKOFF -->
         <div class="slide">
             <div class="slide-content">
-                <h1>CONTRATOS E PLANEJAMENTO</h1>
+                <h1>FASE 1: DIAGNÓSTICO</h1>
+                <h2>Semana 1 - KICKOFF (19 de Junho)</h2>
                 
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">1</span>Ausência de Comparativo Orçado X Realizado</div>
-                    <p>Existem planilhas detalhadas de composição de custo e orçamento para licitação, mas não há link/integração do comparativo entre planejado e realizado por contrato.</p>
-                </div>
-
-                <div class="issue-section">
-                  <div class="issue-title"><span class="issue-number">2</span>Responsáveis pelo Acompanhamento (Ainda não entrevistados):</div>
-                  <p>Vinícius, Eduardo e Moreno — que precisam ser consultados para diagnóstico mais preciso.</p>
-                </div>
-                
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">3</span>Falta de Descritivo Técnico das Atividades</div>
-                    <p>Não há documentação padronizada com:</p>
-                    <ul style="margin-left: 60px; margin-top: 10px; font-size: 11pt;">
-                        <li>Procedimento para cada atividade a executar</li>
-                        <li>Lista de materiais e serviços a contratar</li>
-                        <li>Checklist de materiais/serviços utilizados</li>
-                    </ul>
-                </div>
-
-                <h2 style="margin-top: 30px;">Estrutura de Gestão:</h2>
-                <p><strong>Gestores de Projeto</strong> por unidade são responsáveis pela administração geral, incluindo controle de lucratividade mensal. Possuem Auxiliar Administrativo e devem "saber tudo".</p>
-                <p><strong>Sistema Implantado Recentemente:</strong> PCGP (Premiação) — para incentivo de desempenho.</p>
-            </div>
-        </div>
-
-        <!-- SLIDE 5: FINANCEIRO -->
-        <div class="slide">
-            <div class="slide-content">
-                <h1>FINANCEIRO</h1>
-                
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">1</span>Ausência de Automação</div>
-                    <p>Não há ferramenta automatizada de sistema corporativo ou busca de NFs para controle integrado de compras e pagamentos.</p>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">2</span>Processamento Manual de Pagamentos</div>
-                    <p>Todos os pagamentos são efetuados manualmente pela Jane, com base nas informações do fluxo de compras do Monday.com — criando gargalo operacional.</p>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">3</span>Falta de Controle de Compras Emergenciais</div>
-                    <p>Muitas compras emergenciais ocorrem sem controle efetivo técnico da real necessidade ou urgência.</p>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">4</span>Ausência de Informações de Lucratividade</div>
-                    <p>Não há informação interna sobre lucratividade dos contratos dos clientes (comparação Realizado X Orçado) e geral da empresa.</p>
-                </div>
-
-                <h2 style="margin-top: 30px;">Deficiências Estruturais:</h2>
-                <ul>
-                    <li>Falta de padronização nos processos</li>
-                    <li>Fluxo de caixa não projetado</li>
-                    <li>Sistema Monday.com utilizado, mas sem integração de dados automática</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SLIDE 6: RH -->
-        <div class="slide">
-            <div class="slide-content">
-                <h1>RECURSOS HUMANOS</h1>
-                
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">1</span>Desvio de Função</div>
-                    <p><strong>Monyque (RH)</strong> realiza emissão de Notas Fiscais para clientes — atividade que deveria ser responsabilidade do financeiro/administrativo.</p>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">2</span>Apontamentos Manuais em Excel</div>
-                    <p>Apontamentos mensais de horas/atividades são efetuados manualmente em planilhas, sujeitos a erros e desvios, gerando folha de pagamento posterior no escritório contábil.</p>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">3</span>Documentação Deficiente</div>
-                    <p>Faltam:</p>
-                    <ul style="margin-left: 60px; margin-top: 10px; font-size: 11pt;">
-                        <li>Organograma formal (ainda precisa ser revisado)</li>
-                        <li>Descrição de cargos e responsabilidades</li>
-                        <li>Manuais de procedimentos e benefícios</li>
-                    </ul>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">4</span>Acúmulo de Funções</div>
-                    <p>Gestores operacionais acumulam múltiplas responsabilidades e precisam delegar tarefas para focar em gestão. Não há definição de backups ou rotatividade.</p>
-                </div>
-
-                <h2 style="margin-top: 30px;">Lacunas de Gestão de Pessoas:</h2>
-                <ul>
-                    <li>Ausência de plano de carreira</li>
-                    <li>Programa de benefícios não documentado</li>
-                    <li>Procedimentos para uso de carro e viagens não formalizados</li>
-                    <li>Mapeamento de contingências trabalhistas e ambientais ausente</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- SLIDE 7: FISCAL CONTÁBIL -->
-        <div class="slide">
-            <div class="slide-content">
-                <h1>FISCAL / CONTÁBIL</h1>
-                
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">1</span>Ausência de Informações de Gestão Interna</div>
-                    <p>DRE, Balanço e lucratividade por Centro de Resultados são gerados apenas pelo escritório de contabilidade externo — sem acesso ou visibilidade interna da empresa.</p>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">2</span>Falta de Controle de Impostos</div>
-                    <p>Não há controle de apuração dos impostos pagos pela empresa, impossibilitando análise de tributação otimizada.</p>
-                </div>
-
-                <div class="issue-section">
-                    <div class="issue-title"><span class="issue-number">3</span>Contingências Não Mapeadas</div>
-                    <p>CNDs e contingências fiscais existentes não foram verificadas ou documentadas.</p>
-                </div>
-
-                <h2 style="margin-top: 30px;">Dependência Externa:</h2>
-                <p>Toda elaboração de informações contábeis e fiscais é realizada por escritório externo, sem sistema ou processo interno que permita à empresa ter visibilidade em tempo real.</p>
-
-                <div class="info-box" style="margin-top: 30px;">
-                    <p>⚠️ <strong>CRÍTICO:</strong> A empresa não possui informação interna consolidada sobre seu desempenho financeiro e sua posição fiscal.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 8: AÇÕES RECOMENDADAS - CURTO PRAZO -->
-        <div class="slide">
-            <div class="slide-content">
-                <h1>AÇÕES RECOMENDADAS</h1>
-                <h2>🚀 CURTO PRAZO (0-4 semanas)</h2>
-                
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">1</span>Definir Critérios de Emergência</div>
-                    <p><strong>Objetivo:</strong> Estabelecer definição clara e objetiva do que constitui uma compra/serviço "emergencial".</p>
-                    <p><strong>Escopo:</strong></p>
-                    <ul style="margin-left: 60px; margin-top: 8px; font-size: 11pt;">
-                        <li>Classificação de ocorrências imprevistas (quebra de equipamento, bloqueio de serviço, risco contratual)</li>
-                        <li>Critério: "Vai parar o serviço e há risco de descumprir contrato?"</li>
-                        <li>Documentar em procedimento formal</li>
-                    </ul>
-                </div>
-
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">2</span>Implementar Protocolo de Assinaturas</div>
-                    <p><strong>Objetivo:</strong> Criar controle de aprovação para compras emergenciais.</p>
-                    <p><strong>Escopo:</strong> Exigir <strong>mínimo 3 assinaturas</strong> para emergências: Gestor de Projeto + Responsável de Suprimentos + Área Financeira</p>
-                </div>
-
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">3</span>Criar Checklists de Materiais</div>
-                    <p><strong>Objetivo:</strong> Padronizar materiais/serviços necessários por atividade/projeto.</p>
-                    <p><strong>Escopo:</strong> Desenvolver checklists estruturados que equipes levem à obra para validação antes de executar atividade.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 9: AÇÕES RECOMENDADAS - MÉDIO PRAZO -->
-        <div class="slide">
-            <div class="slide-content">
-                <h1>AÇÕES RECOMENDADAS</h1>
-                <h2>📈 MÉDIO PRAZO (4-10 semanas)</h2>
-                
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">4</span>Desenvolver Sistema Orçado X Realizado</div>
-                    <p><strong>Objetivo:</strong> Criar visibilidade de execução financeira por contrato e projeto.</p>
-                    <p><strong>Escopo:</strong></p>
-                    <ul style="margin-left: 60px; margin-top: 8px; font-size: 11pt;">
-                        <li>Planilha de controle comparativo (ou integração com Monday.com)</li>
-                        <li>Análise mensal de variações</li>
-                        <li>Dashboard para gestores acompanharem lucratividade em tempo real</li>
-                    </ul>
-                </div>
-
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">5</span>Implementar Fluxo de Caixa Projetado</div>
-                    <p><strong>Objetivo:</strong> Planejar entrada/saída de recursos para os próximos períodos.</p>
-                    <p><strong>Escopo:</strong> Criar projeção mensal de caixa com base em contratos, recebíveis e pagáveis.</p>
-                </div>
-
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">6</span>Digitalizar Apontamentos de Horas</div>
-                    <p><strong>Objetivo:</strong> Eliminar erros e agilizar folha de pagamento.</p>
-                    <p><strong>Escopo:</strong> Implementar sistema ou planilha estruturada que alimente diretamente contabilidade.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 10: AÇÕES RECOMENDADAS - LONGO PRAZO -->
-        <div class="slide">
-            <div class="slide-content">
-                <h1>AÇÕES RECOMENDADAS</h1>
-                <h2>🎯 LONGO PRAZO (10-16 semanas)</h2>
-                
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">7</span>Redesenhar Organograma e Descrever Cargos</div>
-                    <p><strong>Objetivo:</strong> Definir claramente responsabilidades e estrutura.</p>
-                    <p><strong>Escopo:</strong> Mapear toda hierarquia, descrever cargos, responsabilidades e competências necessárias.</p>
-                </div>
-
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">8</span>Criar Plano de Carreira e Benefícios</div>
-                    <p><strong>Objetivo:</strong> Reter talentos e motivar equipe.</p>
-                    <p><strong>Escopo:</strong></p>
-                    <ul style="margin-left: 60px; margin-top: 8px; font-size: 11pt;">
-                        <li>Definir plano de desenvolvimento por cargo</li>
-                        <li>Documentar benefícios formalmente</li>
-                        <li>Criar rotatividade de funções e backups</li>
-                    </ul>
-                </div>
-
-                <div class="action-box">
-                    <div class="action-title"><span class="action-number">9</span>Estabelecer Centros de Resultado para Análise de Lucratividade</div>
-                    <p><strong>Objetivo:</strong> Medir rentabilidade real por projeto/cliente.</p>
-                    <p><strong>Escopo:</strong> Estruturar centros de custo, receita e resultado por unidade de negócio para análise de performance.</p>
+                <div class="week-item">
+                    <div class="week-title">Kickoff </div>
+                    <div class="week-dates">📅 19 de Junho de 2026</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Ações:</strong><br>
+                        • Contrato Assinado (até 12 de Junho) e Documentação Inicial Apresentada<br>
+                        • Balanço, DRE e Contrato Social Atualizado<br>
+                        • Acessos ativados<br>
+                        • Equipe alinhada
+                    </div>
+                    <span class="week-type presencial">🏢 PRESENCIAL</span>
                 </div>
 
                 <div class="info-box" style="margin-top: 30px;">
-                    <p>💡 <strong>NOTA:</strong> Ainda há necessidade de entrevistas complementares com Vinícius, Eduardo e Moreno para detalhar processo de execução de contratos.</p>
+                    <p><strong>Objetivo:</strong> Alinhamento inicial, apresentação de documentação e ativação de acessos ao sistema financeiro.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 11: CENÁRIO ALTERNATIVO - COM ERP -->
+        <!-- SLIDE 4: FASE 1 ANÁLISE -->
         <div class="slide">
             <div class="slide-content">
-                <h1>CENÁRIO ALTERNATIVO</h1>
-                <h2>📊 Próximas Ações (Caso ERP Contratado)</h2>
-
-                <h2 style="margin-top: 30px; font-size: 18pt;">🎯 Curto Termo (Imediato)</h2>
-                <div class="action-box">
-                    <p><strong>1. Designar Responsável:</strong> Nomear gerente de projeto ERP (interno) + estrutura de governança</p>
-                    <p><strong>2. Levantar Requisitos:</strong> Detalhar com equipes (Financeiro, Compras, RH) escopo técnico</p>
+                <h1>FASE 1: DIAGNÓSTICO</h1>
+                <h2>Semanas 2-4 - ANÁLISE PROFUNDA</h2>
+                
+                <div class="week-item">
+                    <div class="week-title">Semana 2: Fluxo de Caixa e Endividamento</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Análise 12 meses</strong><br>
+                        Pontos críticos identificados
+                    </div>
                 </div>
 
-                <h2 style="margin-top: 25px; font-size: 18pt;">📈 Médio Termo (Próximas Semanas)</h2>
-                <div class="action-box">
-                    <p><strong>3. Pesquisar Soluções:</strong> Avaliar ERPs com experiência em construção/projetos (integração completa de módulos)</p>
-                    <p><strong>4. Solicitar Propostas:</strong> Contactar 3-4 fornecedores/integradores para apresentação e cotação</p>
-                    <p><strong>5. Análise Financeira:</strong> Validar orçamento e payback esperado</p>
+                <div class="week-item">
+                    <div class="week-title">Semana 3: Riscos Financeiros e Contratos</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Riscos mapeados</strong><br>
+                        Contratos catalogados
+                    </div>
                 </div>
 
-                <h2 style="margin-top: 25px; font-size: 18pt;">🔧 Longo Termo (Preparação)</h2>
-                <div class="action-box">
-                    <p><strong>6. Implementar Controles Base:</strong> Executar ações curto/médio prazo do diagnóstico em paralelo (não esperar ERP)</p>
-                    <p><strong>7. Preparar Infraestrutura:</strong> Validar capacidade de TI, segurança de dados, backup e disaster recovery</p>
-                    <p><strong>8. Comprometer Equipe:</strong> Comunicar mudanças esperadas, iniciar capacitação progressiva, designar power users</p>
+                <div class="week-item">
+                    <div class="week-title">Semana 4: Consolidação do Diagnóstico</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Mapa de Riscos completo</strong><br>
+                        Dashboard As-Is | Relatório pronto
+                    </div>
                 </div>
 
                 <div class="info-box" style="margin-top: 30px;">
-                    <p>⚠️ <strong>IMPORTANTE:</strong> Implementação de ERP exige dedicação (20-30%) da equipe e sucesso depende de mudança organizacional bem conduzida.</p>
+                    <p><strong>Foco:</strong> Análise profunda da situação financeira e identificação dos principais riscos operacionais.</p>
                 </div>
             </div>
         </div>
 
+        <!-- SLIDE 5: FASE 1 APRESENTAÇÃO -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>FASE 1: DIAGNÓSTICO</h1>
+                <h2>Semana 5 - APRESENTAÇÃO DO DIAGNÓSTICO</h2>
+                
+                <div class="week-item">
+                    <div class="week-title">Validação e Apresentação do Diagnóstico</div>
+                    <!-- <div class="week-dates">Período: 19 Jun - 21 Jul</div> -->
+                    <div class="week-deliverable">
+                        <strong>✓ Relatório Executivo apresentado</strong><br>
+                        Fase 2 aprovada | Equipe validou achados
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 40px;">
+                    <p><strong>📊 ENTREGÁVEIS PRINCIPAIS DA FASE 1:</strong></p>
+                    <p style="margin-top: 15px;">• Relatório de Diagnóstico Executivo<br>
+                    • Mapa de Riscos Detalhado<br>
+                    • Dashboard As-Is (Situação Atual)<br>
+                    • Pontos Críticos e Oportunidades Identificadas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: FASE 2 GESTÃO FINANCEIRA -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>FASE 2: ESTRUTURAÇÃO</h1>
+                <h2>Semanas 6-7 - GESTÃO FINANCEIRA</h2>
+                
+                <div class="week-item">
+                    <div class="week-title">Semana 6: Visão por Contrato e Fluxo Projetado</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Cenários de fluxo projetado</strong><br>
+                        Análise por contrato | Simulações de cenários
+                    </div>
+                </div>
+
+                <div class="week-item">
+                    <div class="week-title">Semana 7: Ferramenta de Controle</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Ferramenta fluxo operacional implantada</strong><br>
+                        Equipe treinada | Primeira análise executada
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <p><strong>Objetivo:</strong> Estruturar ferramentas de gestão financeira com visibilidade clara do fluxo de caixa projetado.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: FASE 2 GOVERNANÇA -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>FASE 2: ESTRUTURAÇÃO</h1>
+                <h2>Semanas 8-10 - GOVERNANÇA E PROCESSOS</h2>
+                
+                <div class="week-item">
+                    <div class="week-title">Semana 8: Responsabilidades e Alçadas</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Fluxos de aprovação definidos</strong><br>
+                        Matriz de responsabilidades estruturada
+                    </div>
+                </div>
+
+                <div class="week-item">
+                    <div class="week-title">Semana 9: Indicadores e Métricas</div>
+                    <div class="week-deliverable">
+                        <strong>✓ KPIs definidos</strong><br>
+                        Dashboard gerencial desenvolvido
+                    </div>
+                </div>
+
+                <div class="week-item">
+                    <div class="week-title">Semana 10: Manuais e Documentação</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Manual Gestão Financeira</strong><br>
+                        Manual Governança | POPs estruturados
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: FASE 2 TESTES -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>FASE 2: ESTRUTURAÇÃO</h1>
+                <h2>Semanas 11-12 - TESTES E ENCERRAMENTO</h2>
+                
+                <div class="week-item">
+                    <div class="week-title">Semana 11: Testes Operacionais</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Primeiro ciclo de controles executado</strong><br>
+                        Validação de processos | Ajustes necessários
+                    </div>
+                </div>
+
+                <div class="week-item">
+                    <div class="week-title">Semana 12: Conclusão Fase 2</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Equipe treinada</strong><br>
+                        Ferramentas operacionais | Transição para Fase 3
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <p><strong>Objetivo:</strong> Estrutura Implementada e Validada</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: FASE 3 ORGANIZAÇÃO -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>FASE 3: CONSOLIDAÇÃO</h1>
+                <h2>Semanas 13-14 - ORGANIZAÇÃO FINAL</h2>
+                
+                <div class="week-item">
+                    <div class="week-title">Semana 13: Documentação Financeira Estruturada</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Documentação Financeira organizada</strong><br>
+                        Contratos catalogados | Drive estruturado
+                    </div>
+                </div>
+
+                <div class="week-item">
+                    <div class="week-title">Semana 14: Demonstrativos Financeiros</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Balanços e DRE (Demonstração de Resultados) revisados</strong><br>
+                        Auditoria interna | Relatórios finalizados
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <p><strong>Foco:</strong> Garantir que toda documentação financeira está organizada, auditável e facilmente acessível.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: FASE 3 RELATÓRIOS -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>FASE 3: CONSOLIDAÇÃO</h1>
+                <h2>Semanas 15-16 - RELATÓRIOS E FINALIZAÇÃO</h2>
+                
+                <div class="week-item">
+                    <div class="week-title">Semana 15: Relatórios Executivos</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Relatório Endividamento completo</strong><br>
+                        Projeções 12-24 meses | Manual de Rotinas
+                    </div>
+                </div>
+
+                <div class="week-item">
+                    <div class="week-title">Semana 16: Apresentação Final</div>
+                    <div class="week-deliverable">
+                        <strong>✓ Apresentação Board realizada</strong><br>
+                        Treinamento final | Transição para operação
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <p><strong>Objetivo:</strong> Projeto Finalizado e Operacional</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: CRONOGRAMA RESUMIDO -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>CRONOGRAMA CONSOLIDADO</h1>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>FASE</th>
+                            <th>SEMANAS</th>
+                            <!-- <th>PERÍODO</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>FASE 1</strong><br>Diagnóstico</td>
+                            <td>1-5</td>
+                            <!-- <td>19 Jun - 21 Jul</td> -->
+                        </tr>
+                        <tr>
+                            <td><strong>FASE 2</strong><br>Estruturação</td>
+                            <td>6-12</td>
+                            <!-- <td>24 Jul - 8 Set</td> -->
+                        </tr>
+                        <tr>
+                            <td><strong>FASE 3</strong><br>Consolidação</td>
+                            <td>13-16</td>
+                            <!-- <td>11 Set - 6 Out</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box" style="margin-top: 40px;">
+                    <p><strong>📌 RESUMO:</strong> 16 semanas | 14 reuniões online + 3 visitas presenciais </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: PRÓXIMOS PASSOS -->
+        <div class="slide">
+            <div class="slide-content">
+                <h1>PRÓXIMOS PASSOS</h1>
+                
+                <ol style="margin-top: 30px; font-size: 13pt;">
+                    <li><strong>Assinatura de Contrato</strong></li>
+                    <li><strong>Alinhamento de Detalhes</strong> em reunião preparatória (antes de 17 de junho)</li>
+                    <li><strong>Envio de Documentações</strong> solicitadas (Contrato Social Atualizado, Balanço, DRE)</li>
+                    <li><strong>Análise</strong> dos Documentos Enviados</li>
+                    <li><strong>Kickoff Presencial</strong> - 19 de junho de 2026</li>
+                </ol>
+
+                <div class="info-box" style="margin-top: 40px;">
+                    <p><strong>🎯 Meta Imediata:</strong> Confirmação de todas as partes e envio de documentação suporte até 12 de junho.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: CONTATO E ENCERRAMENTO -->
+        <div class="slide cover">
+            <h1 style="color: #60a5fa; margin-bottom: 40px;">Obrigado!</h1>
+            <h2 style="color: #fbbf24; margin-bottom: 30px;">Esperamos contribuir para o crescimento sustentável da J Queiroz</h2>
+            
+            <div style="margin-top: 60px; border-top: 2px solid rgba(96, 165, 250, 0.3); padding-top: 40px;">
+                <p style="font-size: 13pt; color: #e2e8f0; margin-bottom: 20px;">
+                    <strong>Consultoras Responsáveis:</strong>
+                </p>
+                <p style="font-size: 12pt; color: #cbd5e0;">Silvia Curto - Estruturação Financeira, Controladoria e Governança</p>
+                <p style="font-size: 12pt; color: #cbd5e0; margin-bottom: 30px;">Carol Curto - Estrutura Operacional, Processos e Controles de Gestão</p>
+                
+                <p style="font-size: 12pt; color: #a0aec0; margin-top: 40px;">Roadmap de Execução - Projeto J Queiroz</p>
+            </div>
+        </div>
     </div>
 
-    <!-- NAVEGAÇÃO -->
+    <!-- NAVIGATION CONTROLS -->
     <div class="slide-dots" id="dots"></div>
     
     <div class="controls">
-        <button class="nav-button" onclick="changeSlide(-1)">← Anterior</button>
-        <span class="slide-counter"><span id="current">1</span> / <span id="total">11</span></span>
-        <button class="nav-button" onclick="changeSlide(1)">Próximo →</button>
+        <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">13</span></span>
+        <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">Próximo →</button>
     </div>
 
-    <div class="slide-footer">
-        <p>Diagnóstico J Queiroz</p>
-    </div>
+    <!-- <div class="slide-footer">
+        Pressione → ou ← para navegar | ESC para fullscreen
+    </div> -->
 
     <script>
-        let currentSlide = 0;
+        let currentSlide = 1;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
+        
+        // Swipe gesture detection
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         // Create dots
         const dotsContainer = document.getElementById('dots');
-        for (let i = 0; i < totalSlides; i++) {
+        for (let i = 1; i <= totalSlides; i++) {
             const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (i === 0) dot.classList.add('active');
+            dot.className = 'dot' + (i === 1 ? ' active' : '');
             dot.onclick = () => goToSlide(i);
             dotsContainer.appendChild(dot);
         }
 
-        document.getElementById('total').textContent = totalSlides;
+        document.getElementById('totalSlides').textContent = totalSlides;
 
         function showSlide(n) {
-            slides[currentSlide].classList.remove('active');
-            document.querySelectorAll('.dot')[currentSlide].classList.remove('active');
+            const dots = document.querySelectorAll('.dot');
             
-            currentSlide = (n + totalSlides) % totalSlides;
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
             
-            slides[currentSlide].classList.add('active');
-            document.querySelectorAll('.dot')[currentSlide].classList.add('active');
-            document.getElementById('current').textContent = currentSlide + 1;
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[currentSlide - 1].classList.add('active');
+            dots[currentSlide - 1].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
         }
 
         function changeSlide(n) {
-            showSlide(currentSlide + n);
+            currentSlide += n;
+            showSlide(currentSlide);
         }
 
         function goToSlide(n) {
-            showSlide(n);
+            currentSlide = n;
+            showSlide(currentSlide);
         }
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') changeSlide(-1);
             if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'Escape') document.documentElement.requestFullscreen().catch(() => {});
         });
+
+        // Touch/Swipe support for better mobile UX
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // pixels
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swiped left - next slide
+                    changeSlide(1);
+                } else {
+                    // Swiped right - previous slide
+                    changeSlide(-1);
+                }
+            }
+        }
+
+        showSlide(currentSlide);
     </script>
 </body>
 </html>
